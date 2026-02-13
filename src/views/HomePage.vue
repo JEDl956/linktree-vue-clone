@@ -1,10 +1,21 @@
 <script setup>
 import { ref } from 'vue'
-const title = ref('JEDl Vue')
+import LinkCard from '@/componets/Linkcard/vue'
+
 </script>
 
+const profile = ref({
+  name: 'Jonathan E De Leon ',
+  slogan: 'Compute Technician and student ',
+  avatar: '',
+})
+
 <template>
-  <main class="flex flex-1 items-center justify-center">
-    <h1 class="text-6xl font-thin text-slate-800">{{ title }}</h1>
+  <main class="flex min-h-screen flex-col items-center px-4 py-8">
+    <div>
+      <img src="" alt="" />
+      <h1>Jonathan E De Leon</h1>
+      <p>Slogan</p>
+    </div>
   </main>
 </template>
