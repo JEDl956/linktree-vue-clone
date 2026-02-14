@@ -12,7 +12,11 @@ const profile = ref({
 
 <template>
   <main
-    class="flex min-h-screen flex-col items-center bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 py-8"
+  class="flex min-h-screen flex-col items-center
+         bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950
+         px-4 py-8"
+>
+
   >
     <!-- Profile Header -->
     <div class="mt-8 mb-8 flex flex-col items-center text-center">
