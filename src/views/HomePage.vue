@@ -4,8 +4,9 @@ import LinkCard from '@/components/LinkCard.vue'
 
 const profile = ref({
   name: 'Jonathan E De Leon',
-  slogan: 'Computer Technician and student',
-  avatar: 'https://api.dicebear.com/9.x/avataaars/svg?topProbability=0',
+  slogan: 'Computer Support Specialist in Training',
+  avatar: 'https://api.dicebear.com/9.x/identicon/svg',
+
 })
 </script>
 
