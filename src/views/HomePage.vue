@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import LinkCard from '@/components/LinkCard.vue'
 //import LinkCard from '@/componets/Linkcard/vue'
 
 const profile = ref({
@@ -14,13 +15,32 @@ const profile = ref({
     <!-- Profile Header -->
     <div class="m-8 flex flex-col items-center text-center">
       <div
-        class="mb-4 h-24 w-24 overflow-hidden rounded-full border-4 border-green-400 shadow-green-500/20 sm:w-32"
+        class="mb-4 h-24 w-24 overflow-hidden rounded-full border-4 border-green-400 shadow-green-500/20 sm:h-32 sm:w-32"
       >
         <img :src="profile.avatar" alt="avatar" />
       </div>
 
-      <h1 class="mb-2 font-display text-2x1 font-bold text-white sm:text-3xl">{{ profile.name }}</h1>
-      <p class= "max-w-xs text-gray-300sm:text-lg"> {{ profile.slogan }}</p>
+      <h1 class="mb-2 font-display text-2xl font-bold text-white sm:text-3xl">
+        {{ profile.name }}
+      </h1>
+
+      <p class="max-w-xs text-gray-300 sm:text-lg">
+        {{ profile.slogan }}
+      </p>
+    </div>
+
+    <div>
+      <!-- Link List -->
+      <div class="flex w-full max-w-md flex-col gap-4">
+        <LinkCard v-for="x of [1, 2, 3]" :key="x" />
+      </div>
+
+      <!-- Navigate to info page -->
+      <RouterLink 
+      to="/info"
+      class="mt-8 text-sm text-gray-400 underline-offset-4 hover:underline hover:text-green-400 transition-colors duration-200"
+
+      >About me  → </RouterLink>
     </div>
   </main>
 </template>
