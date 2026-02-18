@@ -5,18 +5,39 @@ import LinkCard from '@/components/LinkCard.vue'
 const profile = ref({
   name: 'Jonathan E De Leon',
   slogan: 'Computer Support Specialist in Training',
-  avatar: 'https://api.dicebear.com/9.x/identicon/svg',
+  avatar: 'https://api.dicebear.com/9.x/identicon/svg?seed=JonathanDeLeon',
 
+  links: [
+    {
+      id: 1,
+      title: 'GitHub',
+      url: 'https://github.com/JEDl956',
+      icon: 'code',
+      description: 'Check out my projects on GitHub.',
+    },
+    {
+      id: 2,
+      title: 'LinkedIn',
+      url: 'https://linkedin.com/in/jonathan-de-leon-774040332',
+      icon: 'briefcase',
+      description: 'Connect with me professionally.',
+    },
+    {
+      id: 3,
+      title: 'Expense Splitter',
+      url: 'https://week2-paymnetdirect.jedl956.workers.dev/',
+      icon: 'cash',
+      description: 'My Expense Splitter project from class.',
+    },
+  ],
 })
 </script>
 
 <template>
   <main
-  class="flex min-h-screen flex-col items-center
-         bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950
-         px-4 py-8"
->
-
+    class="flex min-h-screen flex-col items-center
+           bg-linear-to-b from-slate-950 via-slate-900 to-slate-950
+           px-4 py-8"
   >
     <!-- Profile Header -->
     <div class="mt-8 mb-8 flex flex-col items-center text-center">
@@ -25,7 +46,7 @@ const profile = ref({
       >
         <img
           :src="profile.avatar"
-          alt="avatar"
+          :alt="profile.name"
           class="h-full w-full object-cover"
         />
       </div>
@@ -42,9 +63,14 @@ const profile = ref({
     <!-- Link List -->
     <div class="w-full max-w-md">
       <div class="flex w-full flex-col gap-4">
-        <LinkCard />
-        <LinkCard />
-        <LinkCard />
+        <LinkCard
+          v-for="link in profile.links"
+          :key="link.id"
+          :title="link.title"
+          :url="link.url"
+          :description="link.description"
+          :icon="link.icon"
+        />
       </div>
     </div>
 
