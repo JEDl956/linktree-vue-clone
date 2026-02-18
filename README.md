@@ -5,7 +5,7 @@ Vue 3 starter project using Vite and Tailwind CSS.
 ## Tech Stack
 - Vue 3
 - Vite
-- Tailwind CSS 4
+- Tailwind CSS
 - Vue Router
 - ESLint
 - Prettier
@@ -26,6 +26,3 @@ src/
  ├── App.vue
  ├── main.js
  └── router.js
-
-
-
